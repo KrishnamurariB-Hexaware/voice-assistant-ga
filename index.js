@@ -33,14 +33,28 @@ app.post('/api/webhook', function(req, res) {
     // var token = req.body.token;
     // var geo = req.body.geo;
     console.log("REQUEST : " + JSON.stringify(req.body))
-    module_loader.Logic(req, res, (err, result)=>{
-        console.log("Callback Result : " + result)
-        response = {
-            "error": null,
-            "successful": true
-        }
-        res.send(response)
-    });
+
+    if(req.body.queryResult.action == "ApplyLeaveIntent"){
+        module_loader.ApplyLeave(req, res, (err, result)=>{
+            console.log("Callback Result : " + result)
+            response = {
+                "error": null,
+                "successful": true
+            }
+            res.send(response)
+        });
+    }//Route to ApplyLeaveAPI
+
+    else if(req.body.queryResult.action == "SomethingElse"){
+        module_loader.GetLeaveStatus(req, res, (err, result)=>{
+            console.log("Callback Result : " + result)
+            response = {
+                "error": null,
+                "successful": true
+            }
+            res.send(response)
+        });
+    }//Route to ApplyLeaveAPI
 });
 
 
