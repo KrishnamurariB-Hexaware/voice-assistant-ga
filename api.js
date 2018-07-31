@@ -14,7 +14,7 @@ module.exports = {
         if (error) throw new Error(error);
 
             console.log(body);
-            callback(null, body)//Add this
+            callback(null, JSON.parse(body))//Add this
         });
 
     },
