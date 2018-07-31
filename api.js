@@ -5,9 +5,9 @@ module.exports = {
  
 
         var options = { method: 'GET',
-        url: 'https://api.chucknorris.io/jokes/random',
+        url: 'http://localhost:8080/ftp44/api/leaveDetails/1000',
         headers: 
-        { 'Postman-Token': '572f4990-975c-4eee-ba04-14d4e5cea0b1',
+        { 'Postman-Token': 'e80bf7b5-b257-4bbc-b805-78639870189b',
             'Cache-Control': 'no-cache' } };
 
         request(options, function (error, response, body) {
