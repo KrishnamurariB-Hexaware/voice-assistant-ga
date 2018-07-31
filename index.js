@@ -38,9 +38,10 @@ app.post('/api/webhook', function(req, res) {
         module_loader.ApplyLeave(req, res, (err, result)=>{
             console.log("Callback Result : " + result)
             response = {
-                "error": null,
-                "successful": true
-            }
+
+                "fulfillmentText": result,  
+                "source": "myserver"
+              }
             res.send(response)
         });
     }//Route to ApplyLeaveAPI
@@ -49,9 +50,10 @@ app.post('/api/webhook', function(req, res) {
         module_loader.GetLeaveStatus(req, res, (err, result)=>{
             console.log("Callback Result : " + result)
             response = {
-                "error": null,
-                "successful": true
-            }
+
+                "fulfillmentText": result,  
+                "source": "myserver"
+              }
             res.send(response)
         });
     }//Route to ApplyLeaveAPI
