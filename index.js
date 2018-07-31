@@ -12,9 +12,9 @@ var bodyParser = require('body-parser');
 require('dotenv').config()
 
 //Configuring the Express Middleware
-app = express(),
-http = require('http'),
-httpServer = http.Server(app);
+app = express()
+// http = require('http'),
+// httpServer = http.Server(app);
 
 //Set PORT to Dynamic Environments to run on any Server
 var port = process.env.PORT || 5000;
